@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmedabad-Gandhinagar Metro Route Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="#home">
+            <span class="brand-mark">AM</span>
+            <span>Ahmedabad Metro</span>
+        </a>
+
+        <nav class="site-nav">
+            <a href="#planner">Plan Journey</a>
+            <a href="#map">Metro Map</a>
+        </nav>
+    </header>
+
+    <main id="home">
+        <section class="hero-section">
+            <div class="hero-copy">
+                <p class="eyebrow">Ahmedabad-Gandhinagar Metro</p>
+                <h1>Plan smarter metro journeys across Ahmedabad and Gandhinagar.</h1>
+                <p class="subtitle">Find shortest-time routes, minimum-stop routes, total stops, line changes, and interchanges.</p>
+
+                <div class="hero-actions">
+                    <a class="button-link" href="#planner">Find Route</a>
+                    <a class="button-link secondary-link" href="#map">View Metro Map</a>
+                </div>
+            </div>
+
+            <div class="metro-visual">
+                <div class="sun-disc"></div>
+                <div class="city-grid">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="track-line">
+                    <span class="station-dot dot-one"></span>
+                    <span class="station-dot dot-two"></span>
+                    <span class="station-dot dot-three"></span>
+                    <span class="station-dot dot-four"></span>
+                    <div class="train-car">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="network-strip">
+            <article>
+                <strong id="stationCount">0</strong>
+                <span>Stations</span>
+            </article>
+            <article>
+                <strong>4</strong>
+                <span>Metro Lines</span>
+            </article>
+            <article>
+                <strong>2</strong>
+                <span>Algorithms</span>
+            </article>
+            <article>
+                <strong>Live</strong>
+                <span>Interchange Detection</span>
+            </article>
+        </section>
+
+        <section class="planner-section" id="planner">
+            <div class="section-heading">
+                <p class="eyebrow">Journey Planner</p>
+                <h2>Choose your stations</h2>
+            </div>
+
+            <div class="planner-layout">
+                <section class="panel planner-panel">
+                    <form class="route-form" id="routeForm">
+                        <label for="sourceStation">Source Station</label>
+                        <select id="sourceStation" required>
+                            <option value="">Select source</option>
+                        </select>
+
+                        <label for="destinationStation">Destination Station</label>
+                        <select id="destinationStation" required>
+                            <option value="">Select destination</option>
+                        </select>
+
+                        <div class="actions">
+                            <button type="button" id="shortestTimeBtn">Shortest Time</button>
+                            <button type="button" id="minimumStopsBtn" class="secondary">Minimum Stops</button>
+                        </div>
+                    </form>
+
+                    <div class="line-card-grid">
+                        <span class="line-card blue-line">Blue Line</span>
+                        <span class="line-card red-line">Red Line</span>
+                        <span class="line-card gandhinagar-line">Gandhinagar Line</span>
+                        <span class="line-card gift-city-branch">GIFT City Branch</span>
+                    </div>
+                </section>
+
+                <section class="panel result-panel">
+                    <div class="result-header">
+                        <div>
+                            <p class="eyebrow">Route Output</p>
+                            <h2 id="resultTitle">Choose a route</h2>
+                        </div>
+                        <button type="button" id="resetBtn" class="ghost">Reset</button>
+                    </div>
+
+                    <div id="resultContent" class="empty-state">
+                        Select source and destination stations, then choose a route type.
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section class="map-section" id="map">
+            <div class="section-heading">
+                <p class="eyebrow">Metro Map</p>
+                <h2>Ahmedabad-Gandhinagar network view</h2>
+            </div>
+
+            <div class="map-grid">
+                <article class="panel map-card">
+                    <h3>Official GMRC Route Maps</h3>
+                    <p>official route maps for the Ahmedabad Metro and Gandhinagar-GIFT City extension.</p>
+
+                    <div class="map-images">
+                        <img src="assets/ahmedabad-metro-route-map.jpg" alt="Ahmedabad Metro route map">
+                        <img src="assets/ahmedabad-gandhinagar-phase-2-map.jpg" alt="Ahmedabad Gandhinagar Phase 2 metro map">
+                    </div>
+
+                    <div class="map-actions">
+                        <a class="line-badge blue-line" href="assets/ahmedabad-metro-route-map.pdf" target="_blank">ahmedabad-metro-route-map</a>
+                        <a class="line-badge gandhinagar-line" href="assets/ahmedabad-gandhinagar-phase-2-map.pdf" target="_blank">ahmedabad-gandhinagar-phase-2-map</a>
+                    </div>
+                </article>
+
+                <article class="panel map-card">
+                    <h3>Simplified Project Diagram</h3>
+                    <p>A clean diagram showing the major route directions and interchange points used by the planner.</p>
+
+                    <div class="mini-map">
+                        <span class="mini-line mini-blue"></span>
+                        <span class="mini-line mini-red"></span>
+                        <span class="mini-line mini-green"></span>
+                        <span class="mini-line mini-yellow"></span>
+
+                        <span class="mini-station ms-a">Vastral</span>
+                        <span class="mini-station ms-b">Old High Court</span>
+                        <span class="mini-station ms-c">Motera</span>
+                        <span class="mini-station ms-d">APMC</span>
+                        <span class="mini-station ms-e">GIFT City</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Ahmedabad-Gandhinagar Metro Route Finder</p>
+        <a href="#planner">Plan journey</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
